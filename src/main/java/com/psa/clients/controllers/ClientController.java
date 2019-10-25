@@ -72,6 +72,9 @@ public class ClientController {
 //		model.addAttribute("regions", region);
 		return "region";
 	}
-		
-
+	
+	@RequestMapping("/testAdd")
+	public String show(){
+		return "client";
+	}
 }
