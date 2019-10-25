@@ -64,6 +64,19 @@ INSERT INTO `regions` (`id`, `name`) VALUES
 	(3, 'Region 3');
 /*!40000 ALTER TABLE `regions` ENABLE KEYS */;
 
+-- Dumping structure for table psa.region_count
+CREATE TABLE IF NOT EXISTS `region_count` (
+  `client_id` int(11) DEFAULT NULL,
+  `region_id` int(11) DEFAULT NULL,
+  `no_of_male` int(11) DEFAULT NULL,
+  `no_of_female` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table psa.region_count: ~0 rows (approximately)
+DELETE FROM `region_count`;
+/*!40000 ALTER TABLE `region_count` DISABLE KEYS */;
+/*!40000 ALTER TABLE `region_count` ENABLE KEYS */;
+
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

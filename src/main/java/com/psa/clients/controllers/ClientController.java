@@ -44,21 +44,17 @@ public class ClientController {
 	@RequestMapping("/api/v1/regions/post_count/{id}")
 	public String getRegions (Model model) {
 		List<Region> regions = new ArrayList<>();
-		regionCountRepository.findAll().forEach(region -> regions.add(region));
-		model.addAttribute("regions", regions);
+//		regionCountRepository.findAll().forEach(region -> regions.add(region));
+//		model.addAttribute("regions", regions);
 		return "client-list";
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="/api/v1/regions/post_count")
-	public String getRegions (@PathVariable int id, Model model) {
-		RegionCount region = regionCountRepository.findById(id).orElse(null);
-		model.addAttribute("regions", region);
+	public String getRegions (@PathVariable int id, RegionCount region) {
+		regionCountRepository.save(region);
+//		model.addAttribute("regions", region);
 		return "region";
 	}
 		
-	}
-	
-	
-	
 
 }
