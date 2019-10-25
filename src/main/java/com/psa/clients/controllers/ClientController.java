@@ -3,6 +3,7 @@ package com.psa.clients.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.swing.plaf.synth.Region;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +51,23 @@ public class ClientController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="/api/v1/regions/post_count")
-	public String getRegions (@PathVariable int id, RegionCount region) {
+	public String getRegions (HttpServletRequest request) {
+		RegionCount region = new RegionCount();
+		String string_client_id = request.getParameter("client_id");
+		String string_region_id = request.getParameter("region_id");
+		String string_no_of_male = request.getParameter("no_of_male");
+		String string_no_of_female = request.getParameter("no_of_female");
+		
+		int client_id = Integer.parseInt(string_client_id);
+		int region_id = Integer.parseInt(string_region_id);
+		int no_of_male = Integer.parseInt(string_no_of_male);
+		int no_of_female = Integer.parseInt(string_no_of_female);
+		
+		region.setClientId(client_id);
+		region.setRegionId(region_id);
+		region.setNoOfFemale(no_of_female);
+		region.setNoOfMale(no_of_male);
+		
 		regionCountRepository.save(region);
 //		model.addAttribute("regions", region);
 		return "region";
