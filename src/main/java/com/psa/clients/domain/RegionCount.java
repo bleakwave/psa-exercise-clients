@@ -18,6 +18,17 @@ public class RegionCount {
 	@Column(name = "no_of_female")
 	private int noOfFemale;
 
+	@Column(name = "client_id")
+	private int clientId;
+	
+	public int getClientId() {
+		return clientId;
+	}
+
+	public void setClientId(int clientId) {
+		this.clientId = clientId;
+	}
+
 	public int getRegionId() {
 		return regionId;
 	}

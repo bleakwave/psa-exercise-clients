@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.psa.clients.dao.jpa.ClientRepository;
+import com.psa.clients.dao.jpa.RegionCountRepository;
 import com.psa.clients.domain.Client;
 
 
@@ -19,6 +20,7 @@ public class ClientController {
 	
 	@Autowired
 	ClientRepository clientRepository;
+	RegionCountRepository regionCountRepository;
 	
 	@RequestMapping("/clients")
 	public String getClients (Model model) {
