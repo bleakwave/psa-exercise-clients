@@ -35,6 +35,12 @@ public class ClientController {
 		return "client";
 	}
 	
+	@RequestMapping("/api/v1/regions/post_count")
+	public String clients () {
+		return "hello";
+		
+	}
+	
 	
 	
 
