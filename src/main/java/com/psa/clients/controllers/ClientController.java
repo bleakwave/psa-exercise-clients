@@ -9,13 +9,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.psa.clients.dao.jpa.ClientRepository;
+import com.psa.clients.domain.Client;
+
 
 @Controller
 
 public class ClientController {
 	
 	@Autowired
-	Clients clientRepository
+	ClientRepository clientRepository;
 	
 	@RequestMapping("/clients")
 	public String getClients (Model model) {
